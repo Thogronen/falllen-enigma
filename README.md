@@ -35,17 +35,17 @@ Responsive
 ## Je website
 
 <details>
-<summary>uitwerken voor kick-off werkgroep</summary>
+<summary>W0</summary>
 
 ### Je opdracht:
 https://indicius.com/
 
 #### Screenshot(s) van de eerste pagina (small screen): 
-Homepage
+<p> Homepage </p>
 <img src="images/indicus_home.png" width="375px" alt="homepage van Indicius">
 
 #### Screenshot(s) van de tweede pagina (small screen):
-Projectpagina
+<p> Projectpagina </p>
 <img src="images/indicius_revamp.png" width="375px" alt="projectpagina van Indicius">
  
 </details>
