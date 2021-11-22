@@ -1,0 +1,136 @@
+* { /* remove all default margin and padding */
+    margin: 0;
+    padding: 0;
+}
+
+/* https://css-tricks.com/specifics-on-css-specificity/ */
+/* https://docs.emmet.io/abbreviations/ */
+
+
+/* General */
+
+:root{
+    /* same as html tag, but more specific */
+    --base-font: 'DM Sans', sans-serif;
+    font-size: 62.5%; /* 10px */
+
+    --background-color-blue: rgb(48, 152, 243);
+    --background-color-red: rgb(254, 101, 113);
+    --background-color-yellow: rgb(255, 204, 0);
+
+    --padding-sides: 0 1.6em; /* base l+r padding */
+
+}
+
+html {
+    font-family: var(--base-font);
+}
+
+h1, h2, h3, h4, p, a {
+    font-family: var(--base-font);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+body h2 {
+    font-size: 4em;
+}
+
+
+.together { /* not used rn */
+    font-family: 'Archivo', sans-serif;
+}
+
+
+/*** Header ***/
+
+header {
+    background-color: var(--background-color-blue);
+    padding: 2.4em 0;
+
+    position: fixed; /* stick here */
+    width: 100%;
+    z-index: 1;
+}
+
+header ul {
+    /* menu, first level */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 0 1.6em; /*making sure it gets the right amount of margin */
+}
+
+header ul ul {
+    /* menu, item level */
+
+    /* display: flex;
+    align-items: center; 
+    Kinda the same so commented out for now*/
+    flex-wrap: wrap;
+    /* wrap temporary until menu btn */
+
+}
+
+header h1 { 
+    /* kinda hacky but it works */
+    visibility: hidden;
+    height: 0;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul ul li {
+    margin: 0 3.2em ;
+}
+
+header a {
+    color: white;
+    font-size: 2em; /* temp */
+}
+
+
+header > a > img {
+    height: 2.4em;
+}
+
+
+/*** Main ***/
+
+main section {
+    padding: var(--padding-sides);
+}
+
+/**  Blue Splash **/
+
+main section:first-of-type {
+    background-color: var(--background-color-blue);
+    height: 100vh; /*span whole viewport height */
+
+    position: relative; /*important for animation later */
+    display: flex;
+    align-items: center; 
+    flex-direction: row; /* default */
+
+    color: white;
+}
+
+main section:first-of-type span {
+    color: var(--background-color-yellow);
+    display: block; /* have to drop it on a new line :) */
+
+}
+
+main section:first-of-type div {
+    /* position absolutely to section and anchor to bottom */
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: -3px;
+}
