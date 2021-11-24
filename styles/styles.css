@@ -17,26 +17,39 @@
     --background-color-blue: rgb(48, 152, 243);
     --background-color-red: rgb(254, 101, 113);
     --background-color-yellow: rgb(255, 204, 0);
+    --background-color-gray: rgb(242, 234, 226);
+
+    --background-color-hover: rgb(8, 44, 78); 
 
     --padding-sides: 0 1.6em; /* base l+r padding */
-
+    --padding-top-bottom: 4em 0;
 }
 
-html {
-    font-family: var(--base-font);
-}
 
 h1, h2, h3, h4, p, a {
     font-family: var(--base-font);
     font-weight: 400;
 }
 
-a {
+a,
+a:visited {
     text-decoration: none;
+    color: black;
+    /* font-size: 1.6em; */
+    /* ??? */
 }
 
 body h2 {
-    font-size: 4em;
+    font-size: 3.2em;
+}
+
+h3, p {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 
@@ -109,7 +122,7 @@ main section {
 
 /**  Blue Splash **/
 
-main section:first-of-type {
+main > section:first-of-type {
     background-color: var(--background-color-blue);
     height: 100vh; /*span whole viewport height */
 
@@ -121,16 +134,285 @@ main section:first-of-type {
     color: white;
 }
 
-main section:first-of-type span {
+main > section:first-of-type span {
     color: var(--background-color-yellow);
     display: block; /* have to drop it on a new line :) */
 
 }
 
-main section:first-of-type div {
+main > section:first-of-type div {
     /* position absolutely to section and anchor to bottom */
     position: absolute;
     right: 0px;
     left: 0px;
-    bottom: -3px;
+    bottom: -2px;
 }
+
+
+/* ***************** */
+/* Section: About Us */
+/* ***************** */
+
+main section:nth-of-type(2) {
+    padding-top: 8em;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main section:nth-of-type(2) h2{
+    padding-bottom: 2em; /* since it uses H2's */
+}
+
+/* ***************** */
+/* General styling for About Us > Icon block */
+/* ***************** */
+
+
+main section:nth-of-type(2) > section,
+main section:nth-of-type(2) > section div
+ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    width: 100%; /*damn you, flexbox */
+}
+
+main section:nth-of-type(2) > section div div:first-of-type {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--background-color-blue);
+    border-radius: 50%;
+
+    /* background onder iconen */
+    width: 80px;
+    height: 80px;
+}
+
+img[src*="face"],
+img[src*="lightbulb"],
+img[src*="wrench"]   {
+    /* icoongrootte */
+        width: 32px;
+        height: 32px;
+}
+
+main section:nth-of-type(2) > section> div div:last-of-type {
+     /* paddings voor tussen de iconen en tekst  */
+    padding-top: 2em;
+    padding-bottom: 3em;
+    line-height: 2.5em;
+}
+
+main section:nth-of-type(2) > section div:nth-of-type(2) div:first-of-type {
+    background-color: var(--background-color-red); 
+}
+
+main section:nth-of-type(2) > section div:nth-of-type(3) div:first-of-type {
+    background-color: var(--background-color-yellow); 
+}
+
+
+
+
+/* ***************** */
+/* General styling for Case Studies */
+/* ***************** */
+
+
+
+
+main section:nth-of-type(3) {
+    /* For future flexing */
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    padding-top: 8em;
+}
+
+main section:nth-of-type(3) > article > div {
+    overflow: hidden;
+}
+
+main section:nth-of-type(3) > article {
+    background-color: var(--background-color-gray);
+    display: flex;
+    flex-direction: column;
+}
+
+main section:nth-of-type(3) > article div img{
+    width: 100%; /* Making sure I don't get overflow :) */
+    transition: transform .2s;
+
+}
+
+main section:nth-of-type(3) > article img:hover{
+    transform: scale(1.2);
+}
+
+main section:nth-of-type(3) > article a{
+    padding: 3.2em 1.6em;
+ 
+}
+
+main section:nth-of-type(3) > article h3{
+    color: var(--background-color-blue);
+}
+
+main section:nth-of-type(3) > article span {
+    display: flex;
+}
+
+main section:nth-of-type(3) > article > a > p:first-of-type{
+    /* only the heading */
+    padding: 1em 0;
+    font-size: 2.4em;
+}
+
+main section:nth-of-type(3) > article span p{
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+main section:nth-of-type(3) > article span img{
+    width: 2em;
+    margin-right: 1em;
+}
+
+main section:nth-of-type(3) > article a {
+    position: relative;
+}
+
+main section:nth-of-type(3) > article a > p:nth-of-type(2){
+    /* NEW flag */
+    position: absolute;
+    bottom: 1.6em; /* equal to padding-bottom: 1.6em */
+    right: 1.6em;
+
+    padding: 0.4em 0.8em;
+    background-color: var(--background-color-yellow);
+
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+main section:nth-of-type(3) > a {
+    align-self: center;
+    background-color: var(--background-color-blue);
+    padding: 1em 2em;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.6em;
+    margin-top: 2em; /* grid + gap? */
+
+    transition: 1s;
+}
+
+main section:nth-of-type(3) > a:hover {
+    background-color: var(--background-color-hover);
+}
+
+main section:nth-of-type(3) > article:hover {
+    /* background-color: var(--background-color-hover);
+    transition: 0.5s;
+    color: white;
+    transform: scale(1.2); */
+}
+
+
+
+
+
+
+/* ***************** */
+/* Slideshow */
+/* ***************** */
+
+main section:nth-of-type(4) {
+    background-color: var(--background-color-yellow);
+
+    margin-top: 5em;
+    padding-top: 5em;
+}
+
+main section:nth-of-type(4) div {
+    /* hoofdcontainer */
+    display: flex;
+    flex-direction: column;
+
+    /* background: powderblue; */
+}
+
+main section:nth-of-type(4) > div:nth-of-type(1) {
+    /* progress bar + navigatie */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+main section:nth-of-type(4) div:nth-of-type(1) div  {
+    /* progress bar + navigatie */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main section:nth-of-type(4) div:nth-of-type(1) div > button {
+    /* button container */
+    background-color: transparent;
+    border: none;
+}
+
+main section:nth-of-type(4) div:nth-of-type(1) div > button > img {
+    /* button svg */
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: none;
+}
+main section:nth-of-type(4) div:nth-of-type(1) div > button:first-of-type > img {
+    /* first button */
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+main section:nth-of-type(4) div div img{
+    display: flex;
+    width: 100%; /* 100% of parent */
+}
+
+
+
+/* Progress bar */
+
+/* section:nth-of-type(4) > div > div{
+
+    width: 140px;
+    background-color: rgb(206, 172, 16);
+    border-radius: 4px;
+    height: 4px;
+      
+    margin: 0 auto;
+
+}
+
+section:nth-of-type(4) > div > div > div {
+    height: 4px;
+    border-radius: 4px;
+
+    animation-name: progressBar;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+} */
