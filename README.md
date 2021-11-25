@@ -58,7 +58,7 @@ https://indicius.com/
 <summary>uitwerken na afloop 2e werkgroep</summary>
 
 ### de hele pagina: 
-<img src="images/dummy-plaatje.png" width="375px" alt="breakdown van de hele pagina">
+<img src="images/breakdown_home.png" width="375px" alt="breakdown van de hele pagina">
 
 ### dynamisch deel (bijv menu): 
 <img src="images/breakdown_menu.png" width="375px" alt="breakdown van een dynamisch deel">
