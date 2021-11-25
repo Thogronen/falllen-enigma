@@ -73,11 +73,17 @@ https://indicius.com/
 
 <details open>
 <summary>
+ 
 Het begin is er; het grootste deel van het werk van de eerste pagina is gedaan. Section 5 (We have a lot to say) zou geen probleem moeten zijn (het is praktisch hetzelfde als 4), 6 (Meet the Humans) word wel even kloten met animaties (en javascript, on scroll/position) en 7 (Footer) is puur Flexbox. Ik heb nog niet echt naar het menu gekeken, maar dat komt wel goed nu m'n basis JS weer op orde is. Bij section 4 (Carousel) word het wel even uitzoeken hoe ik tekst alleen toon binnen de container met animaties op een timer EN op commando.
+ 
 </summary>
 
 ### Stand van zaken
 Zie bovenstaande! Goed op weg, maar genoeg te doen. Het is vooral animeren en JS voor deze pagina nu. Ik verwacht begin volgende week te beginnen met de tweede pagina, als het een beetje mee zit.
+ 
+ ### Huidige voortgang: 
+ <img src="images/indicius_alpha-2.png" width="375px" alt="breakdown van een dynamisch deel">
+ 
 
 
 ### Agenda voor meeting
