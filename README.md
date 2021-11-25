@@ -58,13 +58,10 @@ https://indicius.com/
 <summary>uitwerken na afloop 2e werkgroep</summary>
 
 ### de hele pagina: 
-<img src="images/dummy-plaatje.jpg" width="375px" alt="breakdown van de hele pagina">
+<img src="images/dummy-plaatje.png" width="375px" alt="breakdown van de hele pagina">
 
 ### dynamisch deel (bijv menu): 
-<img src="images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
-
-### wellicht nog een dynamisch deel (bijv filter): 
-<img src="images/dummy-plaatje.jpg" width="375px" alt="breakdown van nog een dynamisch deel">
+<img src="images/breakdown_menu.png" width="375px" alt="breakdown van een dynamisch deel">
 
 </details>
 
@@ -75,10 +72,12 @@ https://indicius.com/
 ## Voortgang 1 (week 2)
 
 <details open>
-<summary>uitwerken voor 1e voortgang</summary>
+<summary>
+Het begin is er; het grootste deel van het werk van de eerste pagina is gedaan. Section 5 (We have a lot to say) zou geen probleem moeten zijn (het is praktisch hetzelfde als 4), 6 (Meet the Humans) word wel even kloten met animaties (en javascript, on scroll/position) en 7 (Footer) is puur Flexbox. Ik heb nog niet echt naar het menu gekeken, maar dat komt wel goed nu m'n basis JS weer op orde is. Bij section 4 (Carousel) word het wel even uitzoeken hoe ik tekst alleen toon binnen de container met animaties op een timer EN op commando.
+</summary>
 
 ### Stand van zaken
-hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+Zie bovenstaande! Goed op weg, maar genoeg te doen. Het is vooral animeren en JS voor deze pagina nu. Ik verwacht begin volgende week te beginnen met de tweede pagina, als het een beetje mee zit.
 
 
 ### Agenda voor meeting
