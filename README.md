@@ -116,17 +116,21 @@ hier na afloop snel de uitkomsten van de meeting vastleggen
 <summary>uitwerken voor 2e voortgang</summary>
 
 ### Stand van zaken
-hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
-
-
-### Agenda voor meeting
-samen met je groepje opstellen
-
-| student 1      | student 2          | student 3    | student 4        |
-| ---            | ---                | ---          | ---              |
-| dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-| en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-| ...            | ...                | ...          | ...              |
+Positief: Grid weer onder de knie, flexbox gaat ook weer steeds makkelijker. De eerste animaties zitten er in, maar @keyframes missen nog. Het laatste lastigere van de eerste pagina is op dit moment in behandeling, en de laatste sectie is zo gedaan.
+ 
+Minder leuk: Delen van de code heb ik overnieuw moeten schrijven omdat grid simpelweg fijner werken is als je de vormgeving wilt laten leiden. Ik heb minder voortgang kunnen maken dan ik had gehoopt, maar deze week heb ik wel weer tijd genoeg om er aan te werken.
+ 
+Aandachtpuntjes:
+ > Ik moet echt een systeem bedenken hoe ik dingen wil gaan groeperen. Nu doe ik het op de volgorde waarin het in me op komt en schuif even wat lijntjes als het werkt - wel redelijk consistent denk ik, maar een beetje een uniforme aanpak is wel wat handiger.
+ > JS zit nu nog niet in de code (maar ik weet wel hoe het moet - iig de drie regels, zal later moeten kijken naar de carousel en misschien sectie 5).
+ 
+ To ask:
+ > Hoe zit het met EM/REM en de meegegeven font-sizes (hoe heeft dat invloed)?
+ > Mag ik nou wel of niet die div's gebruiken? Het is vorige week ook aangekaart, maar heb er niks meer over gehoord van de SA. :) Wil ze best vervangen door lists/list items, maar het is maar de vraag of dat nou zo nuttig is.
+ > Is het mogelijk om .svg binnen de <img> tag ook aan te passen met CSS, of moet ik dan echt de pure SVG's in de code plakken? En zo ja, hoeveel van die geexporteerde code is er echt nodig?
+ 
+ To do still:
+ > Menu verwerken, @keyframes toepassen (en opdracht afmaken) en beginnen met de tweede pagina. Oh, en het opschonen van de code. Zit nu echt een beetje met sizing issues - het lijkt vaak niet consistent te kunnen zijn met de globale regels.
 
 
 ### Verslag van meeting
