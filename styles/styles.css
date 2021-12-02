@@ -18,11 +18,16 @@
     --background-color-red: rgb(254, 101, 113);
     --background-color-yellow: rgb(255, 204, 0);
     --background-color-gray: rgb(242, 234, 226);
+    --background-color-darkblue: rgb(8, 44, 78);
+    --debug: hotpink;
 
     --background-color-hover: rgb(8, 44, 78); 
 
     --padding-sides: 0 1.6em; /* base l+r padding */
     --padding-top-bottom: 4em 0;
+
+    min-width: 375px;
+    /* temp */
 }
 
 
@@ -243,58 +248,111 @@ main section:nth-of-type(3) > article {
     background-color: var(--background-color-gray);
     display: flex;
     flex-direction: column;
+
+    position: relative;
 }
 
-main section:nth-of-type(3) > article div img{
-    width: 100%; /* Making sure I don't get overflow :) */
-    transition: transform .2s;
 
-}
 
-main section:nth-of-type(3) > article img:hover{
-    transform: scale(1.2);
-}
 
 main section:nth-of-type(3) > article a{
-    padding: 3.2em 1.6em;
- 
+    padding-bottom: 1em;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+}
+
+main section:nth-of-type(3) > article a > div {
+    grid-area: image;
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    overflow: hidden; /* prevent spillover */
+}
+
+main section:nth-of-type(3) > article a > :not(div) {
+    margin-bottom: 1.5em;
+}
+
+
+main section:nth-of-type(3) > article a > div img {
+    /* Needs a check on when to use min/max/normal */
+    min-width: 100%; /* Sets width to max parent width*/
+    height: 100%; 
+}
+
+
+main section:nth-of-type(3) > article a > h3 {
+    grid-area: content_topic;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    padding-top: 1em;
+}
+
+main section:nth-of-type(3) > article a > p:first-of-type {
+    grid-area: content_heading;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    font-size: 2.4em;
+}
+
+main section:nth-of-type(3) > article a > span {
+    grid-area: content_link;
+    grid-row-start: 4;
+    grid-row-end: 5;
+
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    gap: 1em;
+
+}
+
+
+img[src*=arrow],
+svg {
+    /* -rm img? */
+    /* temp? */
+    height: 1.6em;
+    width: 1.6em;
+}
+
+
+/* Grid container voor de kaarten (Section 3)*/
+main section:nth-of-type(3) > article a {
+    display: grid;
+
+    grid-template-rows: 20em auto auto auto auto; /* Verticaal */
+    grid-template-columns: 1.6em 1fr 1.6em;  /* Horizontaal */
+    /* Mogelijkheid tot gebruik var, maar padding-sides moet dan opgedeeld. */
+
+    grid-template-areas: 
+    ". image ."
+    ". content_topic ."
+    ". content_heading ."
+    ". content_link .";
 }
 
 main section:nth-of-type(3) > article h3{
     color: var(--background-color-blue);
 }
 
-main section:nth-of-type(3) > article span {
-    display: flex;
-}
-
-main section:nth-of-type(3) > article > a > p:first-of-type{
-    /* only the heading */
-    padding: 1em 0;
-    font-size: 2.4em;
-}
-
 main section:nth-of-type(3) > article span p{
-    font-size: 1.6em;
     font-weight: 500;
 }
 
-main section:nth-of-type(3) > article span img{
-    width: 2em;
-    margin-right: 1em;
-}
-
-main section:nth-of-type(3) > article a {
-    position: relative;
-}
 
 main section:nth-of-type(3) > article a > p:nth-of-type(2){
     /* NEW flag */
     position: absolute;
-    bottom: 1.6em; /* equal to padding-bottom: 1.6em */
-    right: 1.6em;
 
-    padding: 0.4em 0.8em;
+    bottom: 0;
+    right: 1em;
+
+    padding: 0.2em 0.5em;
     background-color: var(--background-color-yellow);
 
     text-transform: uppercase;
@@ -302,6 +360,7 @@ main section:nth-of-type(3) > article a > p:nth-of-type(2){
 }
 
 main section:nth-of-type(3) > a {
+    /* all case studies button */
     align-self: center;
     background-color: var(--background-color-blue);
     padding: 1em 2em;
@@ -309,23 +368,31 @@ main section:nth-of-type(3) > a {
     color: white;
     font-size: 1.6em;
     margin-top: 2em; /* grid + gap? */
+    margin-bottom: 5em ;
 
     transition: 1s;
+}
+
+/* Animation on card:hover */
+
+
+main section:nth-of-type(3) > article div img{
+    transition: transform 0.5s;
+}
+
+main section:nth-of-type(3) > article a:hover div img{
+    transform: scale(1.2);
+}
+
+main section:nth-of-type(3) > article:hover span img circle,
+main section:nth-of-type(3) > article:hover span svg circle{
+    transition: 0.5s;
+    fill: var(--background-color-hover);
 }
 
 main section:nth-of-type(3) > a:hover {
     background-color: var(--background-color-hover);
 }
-
-main section:nth-of-type(3) > article:hover {
-    /* background-color: var(--background-color-hover);
-    transition: 0.5s;
-    color: white;
-    transform: scale(1.2); */
-}
-
-
-
 
 
 
@@ -333,36 +400,120 @@ main section:nth-of-type(3) > article:hover {
 /* Slideshow */
 /* ***************** */
 
-main section:nth-of-type(4) {
-    background-color: var(--background-color-yellow);
-
-    margin-top: 5em;
-    padding-top: 5em;
-}
-
-main section:nth-of-type(4) div {
-    /* hoofdcontainer */
+main section:nth-of-type(4){
+    /* divide into two sections to allow for easier sectioning */
+    /* contains both progress bar and text + images */
     display: flex;
     flex-direction: column;
 
-    /* background: powderblue; */
+    background-color: var(--background-color-yellow); 
+    padding-bottom: 2em;
+    margin-bottom: 5em;
 }
 
-main section:nth-of-type(4) > div:nth-of-type(1) {
-    /* progress bar + navigatie */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-
-}
-
-main section:nth-of-type(4) div:nth-of-type(1) div  {
-    /* progress bar + navigatie */
-    display: flex;
-    flex-direction: row;
+main section:nth-of-type(4) > div:first-of-type {
+    /* progress bar and button container */
+    display: flex; 
+   
     align-items: center;
+    justify-content: space-between;
+    padding: 3em 1em;
 }
+
+main section:nth-of-type(4) > div:nth-of-type(2) {
+    /* container w text and image */
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div {
+    width: 42em;
+    /* width: 100%; */
+    order: 1;
+    /* order: 1; */
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div:last-of-type {
+    /* width: 320px; */
+    /* nodig om te schalen zo? */
+    margin: 0 auto;
+
+    order: 1;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div > div {
+    /* overflow containers, spant 4.2.2 en 4.2 */
+    overflow: hidden;
+    
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div > div:first-of-type h2 {
+    /* container met h2's in span */
+    display: flex;
+    flex-direction: column;
+
+    height: 1.25em;
+
+    transition: transform 1s ease 0s;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div > div:first-of-type h2 span {
+    /* h2's in span */
+   margin-bottom: 2em;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div >  h2 {
+    /* Together */
+    font-weight: 500;
+    padding: 0.2em 0 1em 0;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div > div:last-of-type > div {
+    /* container met p's */
+    display: flex;
+    flex-direction: column;
+    height: 10em;
+
+    transition: transform 1s ease 0s;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div > div:last-of-type > div p{
+    /* p's */
+    margin-bottom: 5em;
+}
+
+
+
+/* progress bar */
+
+.progressBar div{ /* animation within */
+    height: 4px;
+    border-radius: 4px;
+
+    animation-name: progressBar;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes progressBar {
+    0% {
+        width: 0%;
+        background-color: white;
+    }
+
+    100% {
+        width: 100%;
+        background-color: white;
+    }
+}
+
+/* make containers w overflow hidden and height*/
+/* make sub-container w content, give flex */
+/* content itself needs no styling */
+
+
 
 main section:nth-of-type(4) div:nth-of-type(1) div > button {
     /* button container */
@@ -382,11 +533,6 @@ main section:nth-of-type(4) div:nth-of-type(1) div > button:first-of-type > img 
     transform: rotate(180deg);
 }
 
-
-
-
-
-
 main section:nth-of-type(4) div div img{
     display: flex;
     width: 100%; /* 100% of parent */
@@ -396,18 +542,17 @@ main section:nth-of-type(4) div div img{
 
 /* Progress bar */
 
-/* section:nth-of-type(4) > div > div{
 
+.progressBar {
+    /* progress bar wrapper */
     width: 140px;
     background-color: rgb(206, 172, 16);
     border-radius: 4px;
     height: 4px;
-      
-    margin: 0 auto;
-
 }
 
-section:nth-of-type(4) > div > div > div {
+.progressBar div{ 
+    /* animation */
     height: 4px;
     border-radius: 4px;
 
@@ -415,4 +560,154 @@ section:nth-of-type(4) > div > div > div {
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-} */
+}
+
+@keyframes progressBar {
+    0% {
+        width: 0%;
+        background-color: white;
+    }
+
+    100% {
+        width: 100%;
+        background-color: white;
+    }
+}
+
+/* Articles | 5*/
+
+main section:nth-of-type(5) h3 {
+    font-size: 4em;
+    text-transform: none;
+    font-weight: 400;
+}
+
+/* article > cards */
+
+
+main section:nth-of-type(5) article a{
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    background-color: var(--background-color-gray);
+
+    padding: 3.2em 2em 9.4em;
+
+    /* font-size: 1.6em; */
+    /* Hoe werkt dit? Wat is de font-size hier? */
+
+    overflow: hidden;
+}
+
+main section:nth-of-type(5) article h4 {
+    color:rgb(116, 116, 129);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.6em;
+}
+
+main section:nth-of-type(5) article p {
+    font-weight: 500;
+    font-size: 2.4em;
+}
+
+main section:nth-of-type(5) > p{
+    margin-bottom: 2em;
+}
+
+main section:nth-of-type(5) > article h4{
+    margin-bottom: 1em;
+}
+
+main section:nth-of-type(5) article p:last-of-type {
+    position: absolute;
+    bottom: 2rem;
+    right: -12.1rem; 
+    /* surely this can be done better? */
+
+    display: flex;
+    align-items: center;
+
+    font-size: 1.6em;
+   
+    gap: 1.5rem;
+}
+
+main section:nth-of-type(5) article p:last-of-type span {
+    opacity: 0;
+}
+
+/* animation for cards */
+/* TBD w/ keyframes, probably */
+
+main section:nth-of-type(5) article a:hover{
+    background-color: var(--background-color-darkblue);
+}
+
+main section:nth-of-type(5) > article a:hover h4{
+    color: var(--background-color-yellow);
+}
+
+main section:nth-of-type(5) > article a:hover p {
+    color: white;
+}
+
+main section:nth-of-type(5) > article a:hover p:last-of-type {
+    color: var(--background-color-yellow);
+    right: 1em;
+    transition: all 0.3s ease 0s;
+}
+
+main section:nth-of-type(5) article a:hover p:last-of-type span {
+    transition: opacity 0.2s ease 0.1s;
+    opacity: 1;
+}
+
+main section:nth-of-type(5) > article a:hover{
+    transition: 0.2s ease 0.1s;
+
+}
+
+/* Meet us - 6 */
+
+main section:nth-of-type(6) {
+    margin-top: 20em;
+    margin-bottom: 20em;
+    /* background-color: aquamarine; */
+}
+
+main section:nth-of-type(6) > div {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    background-color: var(--background-color-gray);
+    height: 24em;
+    width: 24em;
+    border-radius: 50%;
+
+    margin: 0px auto;
+    padding: 2em;
+    font-size: 1.4em;
+}
+
+main section:nth-of-type(6) > div a{
+    margin-top: 2em;
+    padding: 1em;
+    background-color: var(--background-color-blue);
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2em;
+}
+
+
+main section:nth-of-type(6) > div h3{
+ text-transform: none;
+ font-weight: 400;
+ font-size: 28px;
+ line-height: 1.2em;
+}
