@@ -2,7 +2,12 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\Downloads\\fluffy-enigma-official\\fluffy-enigma-official"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"livePreview.defaultPreviewPath": "c:\\Users\\thoma\\Downloads\\fluffy-enigma-official\\fluffy-enigma-official\\index.html"
+	}
 }
