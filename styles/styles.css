@@ -1,245 +1,452 @@
-* { /* remove all default margin and padding */
-    margin: 0;
-    padding: 0;
+* {
+  /* remove all default margin and padding */
+  margin: 0;
+  padding: 0;
 }
 
 /* https://css-tricks.com/specifics-on-css-specificity/ */
 /* https://docs.emmet.io/abbreviations/ */
 
+/* TODO */
+
+/* DONE */
+
+/* add in menu btn and menu - DONE */
+/* finish Meet us - DONE*/
+/* finish footer - DONE*/
+/* add JS onScroll events for header - DONE*/
+
+
+/* WIP */
+
+/* Change em to rem where necessary - WIP */
+/* replace img with svg where edits are in order - WIP*/
+
+
+/* TO CONSIDER */
+
+/* group elements (mainly a hovers?) to reduce amount of code */
+/* add JS onScroll events for Meet Us section */
+/* add JS events for carousel */
+/* add animations for carousel */
+/* add JS onViewport? for footer animation */
+
+
+
+/* 
+
+Surface:
+
+- Video/Geluid
+- Dark/Light mode
+- Custom themes (bijv. Halloween, kerst...)
+- Lettergrootte kunnen instellen
+- Prefers-reduced-motion
+! Animaties (loading, nadruk, feedback, branding...)
+! SVG (icons) stylen en animeren
+! Scroll animaties (id & scroll-behaviour, intersection observer...)
+- Werkend filteren/sorteren/zoeken
+! Meer micro-interacties
+- Interactie met het toetsenbord++ (shortcuts, escape...)
+? Formulieren
+- States van website als geheel (UI-stack van Hurff)
+- States van controls++ (forms, inputs, links...)
+! Custom properties++ (voor meer dan kleur, aanpassen met JS...)
+- DOM manipulatie
+! Advanced positioning: sticky, fixed, z-index...
+- Progressive enhancement
+- Toegankelijkheid++
+- BlingBling
+- Eigen voorstel (overleg even met de docent)
+
+*/
 
 /* General */
 
-:root{
-    /* same as html tag, but more specific */
-    --base-font: 'DM Sans', sans-serif;
-    font-size: 62.5%; /* 10px */
+:root {
+  /* same as html tag, but more specific */
+  --base-font: "DM Sans", sans-serif;
+  font-size: 62.5%; /* 10px */
 
+<<<<<<< Updated upstream
     --background-color-blue: rgb(48, 152, 243);
     --background-color-red: rgb(254, 101, 113);
     --background-color-yellow: rgb(255, 204, 0);
     --background-color-gray: rgb(242, 234, 226);
+=======
+  --background-color-blue: rgb(48, 152, 243);
+  --background-color-red: rgb(254, 101, 113);
+  --background-color-yellow: rgb(255, 204, 0);
+  --background-color-gray: rgb(242, 234, 226);
+  --background-color-darkblue: rgb(8, 44, 78);
+>>>>>>> Stashed changes
 
-    --background-color-hover: rgb(8, 44, 78); 
+  --background-color-hover: rgb(8, 44, 78);
 
+<<<<<<< Updated upstream
     --padding-sides: 0 1.6em; /* base l+r padding */
     --padding-top-bottom: 4em 0;
+=======
+  --padding-sides: 0 1.6em; /* base l+r padding */
+  --padding-top-bottom: 4em 0;
+
+  min-width: 375px;
+  /* temp */
+>>>>>>> Stashed changes
 }
 
-
-h1, h2, h3, h4, p, a {
-    font-family: var(--base-font);
-    font-weight: 400;
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+footer {
+  font-family: var(--base-font);
+  font-weight: 400;
 }
 
 a,
 a:visited {
-    text-decoration: none;
-    color: black;
-    /* font-size: 1.6em; */
-    /* ??? */
+  text-decoration: none;
+  font-size: 1.6rem;
 }
 
-body h2 {
-    font-size: 3.2em;
+/* a:visited {
+  color: currentColor;
+} */
+
+h2 {
+  font-size: 3.2rem;
 }
 
-h3, p {
-    font-size: 1.6em;
+h3,
+p {
+  font-size: 1.6rem;
 }
 
 h3 {
-    font-weight: 600;
-    text-transform: uppercase;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-
-.together { /* not used rn */
-    font-family: 'Archivo', sans-serif;
+.together {
+  /* not used rn */
+  font-family: "Archivo", sans-serif;
 }
-
 
 /*** Header ***/
 
 header {
-    background-color: var(--background-color-blue);
-    padding: 2.4em 0;
+  background-color: var(--background-color-blue);
+  padding: 2.4em 0;
 
-    position: fixed; /* stick here */
-    width: 100%;
-    z-index: 1;
+  position: fixed; /* stick here */
+  width: 100%;
+  z-index: 2;
+
+  transition: all 1s ease 0s;
 }
 
-header ul {
-    /* menu, first level */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 0 0 1.6em; /*making sure it gets the right amount of margin */
-}
-
-header ul ul {
-    /* menu, item level */
-
-    /* display: flex;
-    align-items: center; 
-    Kinda the same so commented out for now*/
-    flex-wrap: wrap;
-    /* wrap temporary until menu btn */
-
-}
-
-header h1 { 
-    /* kinda hacky but it works */
-    visibility: hidden;
-    height: 0;
-}
-
-header ul li {
-    list-style: none;
-}
-
-header ul ul li {
-    margin: 0 3.2em ;
+header h1 {
+  /* kinda hacky but it works */
+  visibility: hidden;
+  height: 0;
 }
 
 header a {
-    color: white;
-    font-size: 2em; /* temp */
+  color: white;
+  font-size: 2em; /* temp */
 }
-
 
 header > a > img {
-    height: 2.4em;
+  height: 2.4em;
 }
 
+/* Menu */
+
+/*  */
+/* JS events */
+/*  */
+
+/* prevent scrolling while menu is open */
+.disableScrolling {
+  overflow: hidden;
+}
+
+.menuContent {
+  transition: all 0.5s ease 0s;
+  opacity: 1;
+}
+
+.menuContentVisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menuBtn span:nth-of-type(1),
+.menuBtn span:last-of-type {
+  top: 0px;
+}
+
+
+.menuBtnOpenState span:nth-of-type(1) {
+  top: 7px;
+  transform: rotate(-45deg);
+}
+
+.menuBtnOpenState span:nth-of-type(2) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menuBtnOpenState span:nth-of-type(3) {
+  top: -7px;
+  transform: rotate(45deg);
+}
+
+
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+
+  padding: 0 1.6rem;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a,
+nav button {
+  z-index: 1;
+  /* will probs need to be higher */
+}
+
+button.menuBtn {
+  background: none;
+
+  /* https://css-tricks.com/currentcolor/ */
+  outline: currentColor 0px none;
+  border: 0px none;
+}
+
+button.menuBtn span {
+  width: 22px;
+  height: 3px;
+
+  margin-bottom: 4px;
+
+  /* for menu btn styling */
+  position: relative;
+  display: block;
+
+  /* button styling */
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px;
+
+  transition: all 0.3s ease 0s;
+  animation-direction: alternate;
+
+}
+
+/* ************ */
+/* Menu content */
+/* ************ */
+
+nav > div {
+  position: fixed;
+
+  align-items: center;
+  display: flex;
+
+  inset: 0;
+
+  height: 100vh;
+
+  background-color: var(--background-color-darkblue);
+}
+
+nav > div > ul {
+  padding: 10rem 6rem;
+}
+
+nav div > ul:first-of-type > li {
+  font-size: 2rem;
+  list-style-type: none;
+}
+
+nav div > ul:first-of-type > li:not(:nth-of-type(5)) {
+  /* everything but the kitchen sink... I mean, the last item in the list! */
+  margin-bottom: 2rem;
+}
+
+nav div ul > ul {
+  margin-top: 4.8rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  font-size: 1.6rem;
+}
+
+nav div ul > ul:first-of-type > li:first-of-type::after {
+  content: "|";
+  font-size: inherit;
+  margin: 0px 1rem;
+  color: white;
+}
+
+nav div ul > ul:first-of-type li,
+nav div ul > ul:nth-of-type(2) li {
+  list-style: none;
+
+  /* aligning | with text */
+  display: flex;
+  align-items: center;
+}
+
+nav ul > ul:nth-of-type(2) {
+  justify-content: space-between;
+}
+
+nav ul > ul:nth-of-type(2) li svg {
+  width: 2.2rem;
+}
+
+nav ul > ul li a {
+  font-size: inherit;
+
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+li.language_active a {
+  color: var(--background-color-yellow);
+}
+
+/* social links for menu */
 
 /*** Main ***/
 
 main section {
-    padding: var(--padding-sides);
+  padding: var(--padding-sides);
 }
 
 /**  Blue Splash **/
 
 main > section:first-of-type {
-    background-color: var(--background-color-blue);
-    height: 100vh; /*span whole viewport height */
+  background-color: var(--background-color-blue);
+  height: 100vh; /*span whole viewport height */
 
-    position: relative; /*important for animation later */
-    display: flex;
-    align-items: center; 
-    flex-direction: row; /* default */
+  position: relative; /*important for animation  */
+  display: flex;
+  align-items: center;
+  flex-direction: row; /* default */
 
-    color: white;
+  color: white;
 }
 
 main > section:first-of-type span {
-    color: var(--background-color-yellow);
-    display: block; /* have to drop it on a new line :) */
-
+  color: var(--background-color-yellow);
+  display: block; /* have to drop it on a new line :) */
 }
 
 main > section:first-of-type div {
-    /* position absolutely to section and anchor to bottom */
-    position: absolute;
-    right: 0px;
-    left: 0px;
-    bottom: -2px;
+  /* position absolutely to section and anchor to bottom */
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: -2px;
 }
-
 
 /* ***************** */
 /* Section: About Us */
 /* ***************** */
 
 main section:nth-of-type(2) {
-    padding-top: 8em;
+  padding-top: 8em;
 
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-main section:nth-of-type(2) h2{
-    padding-bottom: 2em; /* since it uses H2's */
+main section:nth-of-type(2) h2 {
+  padding-bottom: 2em; /* since it uses H2's */
 }
 
 /* ***************** */
 /* General styling for About Us > Icon block */
 /* ***************** */
 
-
 main section:nth-of-type(2) > section,
-main section:nth-of-type(2) > section div
- {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+main section:nth-of-type(2) > section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    text-align: center;
-
-    width: 100%; /*damn you, flexbox */
+  text-align: center;
+  width: 100%;
+  /* makes flexbox center =] */
 }
 
 main section:nth-of-type(2) > section div div:first-of-type {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    background-color: var(--background-color-blue);
-    border-radius: 50%;
+  background-color: var(--background-color-blue);
+  border-radius: 50%;
 
-    /* background onder iconen */
-    width: 80px;
-    height: 80px;
+  /* background onder iconen */
+  width: 80px;
+  height: 80px;
 }
 
 img[src*="face"],
 img[src*="lightbulb"],
-img[src*="wrench"]   {
-    /* icoongrootte */
-        width: 32px;
-        height: 32px;
+img[src*="wrench"] {
+  /* icoongrootte */
+  /* replace with svg! */
+  width: 32px;
+  height: 32px;
 }
 
-main section:nth-of-type(2) > section> div div:last-of-type {
-     /* paddings voor tussen de iconen en tekst  */
-    padding-top: 2em;
-    padding-bottom: 3em;
-    line-height: 2.5em;
+main section:nth-of-type(2) > section > div div:last-of-type {
+  /* paddings voor tussen de iconen en tekst  */
+  padding-top: 2em;
+  padding-bottom: 3em;
+  line-height: 2.5em;
 }
 
 main section:nth-of-type(2) > section div:nth-of-type(2) div:first-of-type {
-    background-color: var(--background-color-red); 
+  background-color: var(--background-color-red);
 }
 
 main section:nth-of-type(2) > section div:nth-of-type(3) div:first-of-type {
-    background-color: var(--background-color-yellow); 
+  background-color: var(--background-color-yellow);
 }
-
-
-
 
 /* ***************** */
 /* General styling for Case Studies */
 /* ***************** */
 
-
-
-
 main section:nth-of-type(3) {
-    /* For future flexing */
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+  /* For future flexing */
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 
-    padding-top: 8em;
+  padding-top: 8em;
 }
 
 main section:nth-of-type(3) > article > div {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 main section:nth-of-type(3) > article {
+<<<<<<< Updated upstream
     background-color: var(--background-color-gray);
     display: flex;
     flex-direction: column;
@@ -296,12 +503,114 @@ main section:nth-of-type(3) > article a > p:nth-of-type(2){
 
     padding: 0.4em 0.8em;
     background-color: var(--background-color-yellow);
+=======
+  background-color: var(--background-color-gray);
+  display: flex;
+  flex-direction: column;
 
-    text-transform: uppercase;
-    font-weight: 700;
+  position: relative;
+}
+
+main section:nth-of-type(3) > article a {
+  padding-bottom: 1em;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  color: black;
+}
+
+main section:nth-of-type(3) > article a > div {
+  grid-area: image;
+  grid-column-start: 1;
+  grid-column-end: 4;
+
+  overflow: hidden; /* prevent spillover */
+}
+
+main section:nth-of-type(3) > article a > h3,
+main section:nth-of-type(3) > article a > p {
+  margin-bottom: 1.5em;
+}
+
+main section:nth-of-type(3) > article a > span {
+  margin-bottom: 0.5em;
+}
+
+main section:nth-of-type(3) > article a > div img {
+  /* Needs a check on when to use min/max/normal */
+  width: 100%; /* Sets width to max parent width*/
+  height: 100%;
+  object-fit: cover;
+}
+
+main section:nth-of-type(3) > article a > h3 {
+  grid-area: content_topic;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  padding-top: 1em;
+}
+
+main section:nth-of-type(3) > article a > p:first-of-type {
+  grid-area: content_heading;
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+  font-size: 2.4rem;
+}
+
+main section:nth-of-type(3) > article a > span {
+  grid-area: content_link;
+  grid-row-start: 4;
+  grid-row-end: 5;
+
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Grid container voor de kaarten (Section 3)*/
+main section:nth-of-type(3) > article a {
+  display: grid;
+
+  grid-template-rows: 20rem auto auto auto auto; /* Verticaal */
+  grid-template-columns: 1.6rem 1fr 1.6rem; /* Horizontaal */
+  /* Mogelijkheid tot gebruik var, maar padding-sides moet dan opgedeeld. */
+
+  grid-template-areas:
+    ". image ."
+    ". content_topic ."
+    ". content_heading ."
+    ". content_link .";
+}
+
+main section:nth-of-type(3) > article h3 {
+  color: var(--background-color-blue);
+}
+
+main section:nth-of-type(3) > article span p {
+  font-weight: 500;
+}
+
+main section:nth-of-type(3) > article a > p:nth-of-type(2) {
+  /* NEW flag */
+  position: absolute;
+
+  bottom: 0;
+  right: 1em;
+
+  padding: 0.2em 0.5em;
+  background-color: var(--background-color-yellow);
+>>>>>>> Stashed changes
+
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 main section:nth-of-type(3) > a {
+<<<<<<< Updated upstream
     align-self: center;
     background-color: var(--background-color-blue);
     padding: 1em 2em;
@@ -309,10 +618,22 @@ main section:nth-of-type(3) > a {
     color: white;
     font-size: 1.6em;
     margin-top: 2em; /* grid + gap? */
+=======
+  /* all case studies button */
+  align-self: center;
+  background-color: var(--background-color-blue);
+  padding: 1em 2em;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.6rem;
+  margin-top: 2em; /* grid + gap? */
+  margin-bottom: 5em;
+>>>>>>> Stashed changes
 
-    transition: 1s;
+  transition: 1s;
 }
 
+<<<<<<< Updated upstream
 main section:nth-of-type(3) > a:hover {
     background-color: var(--background-color-hover);
 }
@@ -326,14 +647,34 @@ main section:nth-of-type(3) > article:hover {
 
 
 
+=======
+/* Animation on card:hover */
 
+main section:nth-of-type(3) > article div img {
+  transition: transform 0.5s;
+}
 
+main section:nth-of-type(3) > article a:hover div img {
+  transform: scale(1.2);
+}
+
+main section:nth-of-type(3) > article:hover span img circle,
+main section:nth-of-type(3) > article:hover span svg circle {
+  transition: 0.5s;
+  fill: var(--background-color-hover);
+}
+
+main section:nth-of-type(3) > a:hover {
+  background-color: var(--background-color-hover);
+}
+>>>>>>> Stashed changes
 
 /* ***************** */
 /* Slideshow */
 /* ***************** */
 
 main section:nth-of-type(4) {
+<<<<<<< Updated upstream
     background-color: var(--background-color-yellow);
 
     margin-top: 5em;
@@ -364,24 +705,158 @@ main section:nth-of-type(4) div:nth-of-type(1) div  {
     align-items: center;
 }
 
+=======
+  /* divide into two sections to allow for easier sectioning */
+  /* contains both progress bar and text + images */
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--background-color-yellow);
+  padding-bottom: 2em;
+  margin-bottom: 5em;
+}
+
+main section:nth-of-type(4) > div:first-of-type {
+  /* progress bar and button container */
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 3em 1em;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) {
+  /* container w text and image */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div {
+  width: 42em;
+  /* width: 100%; */
+  order: 1;
+  /* order: 1; */
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div:last-of-type {
+  /* width: 320px; */
+  /* nodig om te schalen zo? */
+  margin: 0 auto;
+
+  order: 1;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div > div {
+  /* overflow containers, spant 4.2.2 en 4.2 */
+  overflow: hidden;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div > div:first-of-type h2 {
+  /* container met h2's in span */
+  display: flex;
+  flex-direction: column;
+
+  height: 1.25em;
+
+  transition: transform 1s ease 0s;
+}
+
+main
+  section:nth-of-type(4)
+  > div:nth-of-type(2)
+  > div
+  > div:first-of-type
+  h2
+  span {
+  /* h2's in span */
+  margin-bottom: 2em;
+}
+
+main section:nth-of-type(4) > div:nth-of-type(2) > div > h2 {
+  /* Together */
+  font-weight: 500;
+  padding: 0.2em 0 1em 0;
+}
+
+main
+  section:nth-of-type(4)
+  > div:nth-of-type(2)
+  > div
+  > div:last-of-type
+  > div {
+  /* container met p's */
+  display: flex;
+  flex-direction: column;
+  height: 10em;
+
+  transition: transform 1s ease 0s;
+}
+
+main
+  section:nth-of-type(4)
+  > div:nth-of-type(2)
+  > div
+  > div:last-of-type
+  > div
+  p {
+  /* p's */
+  margin-bottom: 5em;
+}
+
+/* progress bar */
+
+.progressBar div {
+  /* animation within */
+  height: 4px;
+  border-radius: 4px;
+
+  animation-name: progressBar;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 0%;
+    background-color: white;
+  }
+
+  100% {
+    width: 100%;
+    background-color: white;
+  }
+}
+
+/* make containers w overflow hidden and height*/
+/* make sub-container w content, give flex */
+/* content itself needs no styling */
+
+>>>>>>> Stashed changes
 main section:nth-of-type(4) div:nth-of-type(1) div > button {
-    /* button container */
-    background-color: transparent;
-    border: none;
+  /* button container */
+  background-color: transparent;
+  border: none;
 }
 
 main section:nth-of-type(4) div:nth-of-type(1) div > button > img {
-    /* button svg */
-    height: 40px;
-    width: 40px;
-    background-color: transparent;
-    border: none;
+  /* button svg */
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
 }
-main section:nth-of-type(4) div:nth-of-type(1) div > button:first-of-type > img {
-    /* first button */
-    transform: rotate(180deg);
+main
+  section:nth-of-type(4)
+  div:nth-of-type(1)
+  div
+  > button:first-of-type
+  > img {
+  /* first button */
+  transform: rotate(180deg);
 }
 
+<<<<<<< Updated upstream
 
 
 
@@ -390,12 +865,16 @@ main section:nth-of-type(4) div:nth-of-type(1) div > button:first-of-type > img 
 main section:nth-of-type(4) div div img{
     display: flex;
     width: 100%; /* 100% of parent */
+=======
+main section:nth-of-type(4) div div img {
+  display: flex;
+  width: 100%; /* 100% of parent */
+>>>>>>> Stashed changes
 }
-
-
 
 /* Progress bar */
 
+<<<<<<< Updated upstream
 /* section:nth-of-type(4) > div > div{
 
     width: 140px;
@@ -416,3 +895,458 @@ section:nth-of-type(4) > div > div > div {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 } */
+=======
+.progressBar {
+  /* progress bar wrapper */
+  width: 140px;
+  background-color: rgb(206, 172, 16);
+  border-radius: 4px;
+  height: 4px;
+}
+
+.progressBar div {
+  /* animation */
+  height: 4px;
+  border-radius: 4px;
+
+  animation-name: progressBar;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 0%;
+    background-color: white;
+  }
+
+  100% {
+    width: 100%;
+    background-color: white;
+  }
+}
+
+/* Articles | 5*/
+
+main section:nth-of-type(5) h3 {
+  font-size: 4em;
+  text-transform: none;
+  font-weight: 400;
+}
+
+/* article > cards */
+
+main section:nth-of-type(5) article a {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  background-color: var(--background-color-gray);
+
+  padding: 3.2rem 2rem 9.4rem;
+
+  overflow: hidden;
+}
+
+main section:nth-of-type(5) article h4 {
+  color: rgb(116, 116, 129);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+
+}
+
+main section:nth-of-type(5) article p {
+  font-weight: 500;
+  font-size: 2.4rem;
+  color: black;
+}
+
+main section:nth-of-type(5) > p {
+  margin-bottom: 2em;
+}
+
+main section:nth-of-type(5) > article h4 {
+  margin-bottom: 1em;
+}
+
+main section:nth-of-type(5) article p:last-of-type {
+  position: absolute;
+  bottom: 2rem;
+  right: -12.1rem;
+  /* surely this can be done better? */
+
+  display: flex;
+  align-items: center;
+
+  font-size: 1.6rem;
+
+  gap: 1.5rem;
+}
+
+main section:nth-of-type(5) article p:last-of-type span {
+  opacity: 0;
+}
+
+/* animation for cards */
+/* TBD w/ keyframes, probably */
+
+main section:nth-of-type(5) article a:hover {
+  background-color: var(--background-color-darkblue);
+}
+
+main section:nth-of-type(5) > article a:hover h4 {
+  color: var(--background-color-yellow);
+}
+
+main section:nth-of-type(5) > article a:hover p {
+  color: white;
+}
+
+main section:nth-of-type(5) > article a:hover p:last-of-type {
+  color: var(--background-color-yellow);
+  right: 1em;
+  transition: all 0.3s ease 0s;
+}
+
+main section:nth-of-type(5) article a:hover p:last-of-type span {
+  transition: opacity 0.2s ease 0.1s;
+  opacity: 1;
+}
+
+main section:nth-of-type(5) > article a:hover {
+  transition: 0.2s ease 0.1s;
+}
+
+/* Meet us - 6 */
+
+main section:nth-of-type(6) {
+  margin-top: 30rem;
+  margin-bottom: 30rem;
+  /* background-color: aquamarine; */
+}
+main section:nth-of-type(6) > div {
+  position: relative;
+  /* Unncessesary? Probs. */
+}
+
+main section:nth-of-type(6) > div > div:first-of-type {
+  /* main section:nth-of-type(6) > div { */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  background-color: var(--background-color-gray);
+  height: 25rem;
+  width: 25rem;
+  border-radius: 50%;
+
+  margin: 0px auto;
+  /* center */
+  padding: 2rem;
+  font-size: 1.4rem;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* main section:nth-of-type(6) > div > div:first-of-type h3{
+    max-width: 95%;
+} */
+
+main section:nth-of-type(6) > div a {
+  margin-top: 2em;
+  padding: 1em;
+  background-color: var(--background-color-blue);
+  border-radius: 50px;
+  color: white;
+  font-size: 1.2em;
+}
+
+main section:nth-of-type(6) > div a:hover {
+  background-color: var(--background-color-hover);
+  transition: 1s;
+}
+
+main section:nth-of-type(6) > div h3 {
+  text-transform: none;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2em;
+}
+
+/* circle positioning */
+
+main section:nth-of-type(6) > div div:nth-of-type(2) div {
+  /* containers voor afbeeldingen in section 6. Size doesn't matter since it gets overwritten, it's just a fallback rn */
+  /* width: 7.2rem;
+    height: 7.2rem; */
+  border-radius: 50%;
+  /* just for debugging, only affects bg-color */
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  background-color: var(--background-color-yellow);
+  transition: all 1s ease 0s;
+
+  object-fit: fill;
+}
+
+main section:nth-of-type(6) > div div:nth-of-type(2) div img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+}
+
+main section:nth-of-type(6) > div div:nth-of-type(2) div:nth-of-type(1) {
+  transform: translate(-64px, 360px);
+  width: 72px;
+  height: 72px;
+}
+
+main section:nth-of-type(6) > div div:nth-of-type(2) div:nth-of-type(2) {
+  transform: translate(90px, 270px);
+  width: 168px;
+  height: 168px;
+}
+
+main section:nth-of-type(6) > div div:nth-of-type(2) div:nth-of-type(3) {
+  transform: translate(-115px, 220px);
+  width: 112px;
+  height: 112px;
+}
+
+main section:nth-of-type(6) > div div:nth-of-type(2) div:nth-of-type(4) {
+  transform: translate(115px, -210px);
+  width: 132px;
+  height: 132px;
+}
+
+main section:nth-of-type(6) > div div:nth-of-type(2) div:nth-of-type(5) {
+  transform: translate(64px, -350px);
+  width: 104px;
+  height: 104px;
+}
+
+main section:nth-of-type(6) > div div:nth-of-type(2) div:nth-of-type(6) {
+  transform: translate(-100px, -250px);
+  width: 160px;
+  height: 160px;
+}
+
+main section:nth-of-type(6) > div div:nth-of-type(1) div a:hover {
+  background-color: var(--background-color-hover);
+  color: green;
+}
+
+/*  */
+/* Footer */
+/*  */
+
+footer {
+  padding: var(--padding-sides);
+  background-color: var(--background-color-darkblue);
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+
+  position: relative;
+
+  font-size: 1.4rem;
+}
+
+footer section:nth-of-type(1) {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  /* The upper part of the footer. Will stay this way, even when scaling */
+  /* background-color: var(--background-color-darkblue); */
+  color: white;
+  position: relative;
+}
+
+footer section:nth-of-type(1) > a {
+  max-width: 10rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 50px;
+  background-color: var(--background-color-yellow);
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  color: var(--background-color-darkblue);
+  margin-bottom: 8rem;
+}
+
+footer section:nth-of-type(1) > a:hover {
+  background-color: white;
+  transition: 0.5s;
+}
+
+footer section:nth-of-type(1) > div {
+  width: 90px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  bottom: 0px;
+  left: calc(100% - 88px);
+  transform: rotate(90deg);
+}
+
+.blue-circle,
+.yellow-circle {
+  width: 100px;
+  height: 100px;
+}
+
+footer section:nth-of-type(1) > div svg:first-of-type {
+  transform: translateY(0px);
+  z-index: 3;
+}
+
+footer section:nth-of-type(1) > div svg:last-of-type {
+  transform: translateY(-1rem);
+  z-index: 2;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox */
+/* https://www.youtube.com/watch?v=TBYJ2V1jAlA */
+/* TL;DR
+ 
+You can set a height and width to your svg to determine the size of the CANVAS on the doc. This is LEADING.
+Viewbox is a little weird. The first two numbers make out the starting coordinates (top left is normally 0 0)
+The second set of numbers are kind of like a zoom function. Say we have a w/h of 50/50,
+and 0 0 50 50, that means the viewbox has the same dimensions as the set w/h.
+If you do happen to zoom out (0 0 100 100) you're basically cramping 100 units of width into 50 units,
+and therefore basically zooming out by 2x. It is the same the other way around;
+use (0 0 25 25) you're telling the units to take up twice as much space.
+
+You can shift the canvas around by changing the first set of numbers. 
+*/
+
+/* lower part of the main page footer */
+footer section:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  /* temp for flex */
+}
+
+footer section:nth-of-type(2) section:nth-of-type(1) ul {
+  /* Footer links, both columns  */
+  display: flex;
+  flex-direction: row;
+
+  gap: 2rem;
+  list-style-type: none;
+
+  padding-bottom: 4rem;
+}
+
+footer section:nth-of-type(2) section:nth-of-type(1) > ul > ul > li {
+  /* Footer links, both columns, item specific */
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  list-style: none;
+
+  font-size: 1.1rem;
+}
+
+footer section:nth-of-type(2) section:nth-of-type(1) > ul > ul > li a {
+  /* internal links in footer */
+  color: white;
+}
+
+footer section:nth-of-type(2) section:nth-of-type(1) > ul > ul > li a:hover {
+  /* on internal-links hover */
+  color: var(--background-color-yellow);
+  transition: all 0.3s ease;
+}
+
+footer section:nth-of-type(2) section:nth-of-type(2) form {
+  /* indi updates form */
+  color: white;
+  position: relative;
+}
+
+footer section:nth-of-type(2) section:nth-of-type(2) form label {
+  /* label text */
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+footer section:nth-of-type(2) section:nth-of-type(2) form input {
+  /* input field */
+  display: block;
+  width: 100%;
+  background: none;
+
+  padding: 0.8rem 0px;
+
+  border-color: white;
+  border-style: none none solid;
+  border-width: 0px 0px 1px;
+
+  font-size: 1.8rem;
+  color: white;
+}
+
+footer section:nth-of-type(2) section:nth-of-type(2) form input:focus {
+  border-color: var(--background-color-yellow);
+  outline: currentColor none 0px;
+  /* given colour, style, width */
+}
+
+footer section:nth-of-type(2) section:nth-of-type(2) form button {
+  /* send/arrow button */
+  position: absolute;
+  right: 0;
+  bottom: 0.8rem;
+
+  background: none;
+  border: none;
+}
+
+/* this part ^^^ needs to be re-selector'd maybe */
+
+footer section:nth-of-type(2) > section:nth-of-type(2) ul {
+  /* social links container*/
+  padding: 4rem 0;
+}
+
+footer section:nth-of-type(2) > section:nth-of-type(2) ul {
+  /* social links */
+
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: center;
+
+  list-style-type: none;
+}
+
+footer section:nth-of-type(2) > section:nth-of-type(2) ul li svg {
+  height: 24px;
+}
+
+/* contact info */
+
+footer section:nth-of-type(2) > section:nth-of-type(3) p,
+footer section:nth-of-type(2) > section:nth-of-type(3) a {
+  color: white;
+  line-height: 2.5rem;
+}
+
+footer section:nth-of-type(2) > section:nth-of-type(3) a {
+  display: block;
+}
+>>>>>>> Stashed changes
