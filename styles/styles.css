@@ -19,8 +19,8 @@
 
 /* WIP */
 
-/* Change em to rem where necessary - WIP */
-/* replace img with svg where edits are in order - WIP*/
+/* Change em to rem where necessary - WIP*/
+/* replace img with svg where edits are in order - IN PROGRESS */
 
 
 /* TO CONSIDER */
@@ -68,31 +68,19 @@ Surface:
   --base-font: "DM Sans", sans-serif;
   font-size: 62.5%; /* 10px */
 
-<<<<<<< Updated upstream
-    --background-color-blue: rgb(48, 152, 243);
-    --background-color-red: rgb(254, 101, 113);
-    --background-color-yellow: rgb(255, 204, 0);
-    --background-color-gray: rgb(242, 234, 226);
-=======
   --background-color-blue: rgb(48, 152, 243);
   --background-color-red: rgb(254, 101, 113);
   --background-color-yellow: rgb(255, 204, 0);
   --background-color-gray: rgb(242, 234, 226);
   --background-color-darkblue: rgb(8, 44, 78);
->>>>>>> Stashed changes
 
   --background-color-hover: rgb(8, 44, 78);
 
-<<<<<<< Updated upstream
-    --padding-sides: 0 1.6em; /* base l+r padding */
-    --padding-top-bottom: 4em 0;
-=======
   --padding-sides: 0 1.6em; /* base l+r padding */
   --padding-top-bottom: 4em 0;
 
   min-width: 375px;
   /* temp */
->>>>>>> Stashed changes
 }
 
 h1,
@@ -446,64 +434,6 @@ main section:nth-of-type(3) > article > div {
 }
 
 main section:nth-of-type(3) > article {
-<<<<<<< Updated upstream
-    background-color: var(--background-color-gray);
-    display: flex;
-    flex-direction: column;
-}
-
-main section:nth-of-type(3) > article div img{
-    width: 100%; /* Making sure I don't get overflow :) */
-    transition: transform .2s;
-
-}
-
-main section:nth-of-type(3) > article img:hover{
-    transform: scale(1.2);
-}
-
-main section:nth-of-type(3) > article a{
-    padding: 3.2em 1.6em;
- 
-}
-
-main section:nth-of-type(3) > article h3{
-    color: var(--background-color-blue);
-}
-
-main section:nth-of-type(3) > article span {
-    display: flex;
-}
-
-main section:nth-of-type(3) > article > a > p:first-of-type{
-    /* only the heading */
-    padding: 1em 0;
-    font-size: 2.4em;
-}
-
-main section:nth-of-type(3) > article span p{
-    font-size: 1.6em;
-    font-weight: 500;
-}
-
-main section:nth-of-type(3) > article span img{
-    width: 2em;
-    margin-right: 1em;
-}
-
-main section:nth-of-type(3) > article a {
-    position: relative;
-}
-
-main section:nth-of-type(3) > article a > p:nth-of-type(2){
-    /* NEW flag */
-    position: absolute;
-    bottom: 1.6em; /* equal to padding-bottom: 1.6em */
-    right: 1.6em;
-
-    padding: 0.4em 0.8em;
-    background-color: var(--background-color-yellow);
-=======
   background-color: var(--background-color-gray);
   display: flex;
   flex-direction: column;
@@ -603,22 +533,12 @@ main section:nth-of-type(3) > article a > p:nth-of-type(2) {
 
   padding: 0.2em 0.5em;
   background-color: var(--background-color-yellow);
->>>>>>> Stashed changes
 
   text-transform: uppercase;
   font-weight: 700;
 }
 
 main section:nth-of-type(3) > a {
-<<<<<<< Updated upstream
-    align-self: center;
-    background-color: var(--background-color-blue);
-    padding: 1em 2em;
-    border-radius: 50px;
-    color: white;
-    font-size: 1.6em;
-    margin-top: 2em; /* grid + gap? */
-=======
   /* all case studies button */
   align-self: center;
   background-color: var(--background-color-blue);
@@ -628,26 +548,10 @@ main section:nth-of-type(3) > a {
   font-size: 1.6rem;
   margin-top: 2em; /* grid + gap? */
   margin-bottom: 5em;
->>>>>>> Stashed changes
 
   transition: 1s;
 }
 
-<<<<<<< Updated upstream
-main section:nth-of-type(3) > a:hover {
-    background-color: var(--background-color-hover);
-}
-
-main section:nth-of-type(3) > article:hover {
-    /* background-color: var(--background-color-hover);
-    transition: 0.5s;
-    color: white;
-    transform: scale(1.2); */
-}
-
-
-
-=======
 /* Animation on card:hover */
 
 main section:nth-of-type(3) > article div img {
@@ -667,45 +571,12 @@ main section:nth-of-type(3) > article:hover span svg circle {
 main section:nth-of-type(3) > a:hover {
   background-color: var(--background-color-hover);
 }
->>>>>>> Stashed changes
 
 /* ***************** */
 /* Slideshow */
 /* ***************** */
 
 main section:nth-of-type(4) {
-<<<<<<< Updated upstream
-    background-color: var(--background-color-yellow);
-
-    margin-top: 5em;
-    padding-top: 5em;
-}
-
-main section:nth-of-type(4) div {
-    /* hoofdcontainer */
-    display: flex;
-    flex-direction: column;
-
-    /* background: powderblue; */
-}
-
-main section:nth-of-type(4) > div:nth-of-type(1) {
-    /* progress bar + navigatie */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-
-}
-
-main section:nth-of-type(4) div:nth-of-type(1) div  {
-    /* progress bar + navigatie */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-=======
   /* divide into two sections to allow for easier sectioning */
   /* contains both progress bar and text + images */
   display: flex;
@@ -832,7 +703,6 @@ main
 /* make sub-container w content, give flex */
 /* content itself needs no styling */
 
->>>>>>> Stashed changes
 main section:nth-of-type(4) div:nth-of-type(1) div > button {
   /* button container */
   background-color: transparent;
@@ -856,46 +726,13 @@ main
   transform: rotate(180deg);
 }
 
-<<<<<<< Updated upstream
-
-
-
-
-
-main section:nth-of-type(4) div div img{
-    display: flex;
-    width: 100%; /* 100% of parent */
-=======
 main section:nth-of-type(4) div div img {
   display: flex;
   width: 100%; /* 100% of parent */
->>>>>>> Stashed changes
 }
 
 /* Progress bar */
 
-<<<<<<< Updated upstream
-/* section:nth-of-type(4) > div > div{
-
-    width: 140px;
-    background-color: rgb(206, 172, 16);
-    border-radius: 4px;
-    height: 4px;
-      
-    margin: 0 auto;
-
-}
-
-section:nth-of-type(4) > div > div > div {
-    height: 4px;
-    border-radius: 4px;
-
-    animation-name: progressBar;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-} */
-=======
 .progressBar {
   /* progress bar wrapper */
   width: 140px;
@@ -1349,4 +1186,3 @@ footer section:nth-of-type(2) > section:nth-of-type(3) a {
 footer section:nth-of-type(2) > section:nth-of-type(3) a {
   display: block;
 }
->>>>>>> Stashed changes
